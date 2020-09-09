@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>http://blog.zsongzhe.site/2020/09/09/%E5%AF%B9%E8%B4%A6/</loc>
+    <loc>http://blog.zsongzhe.site/2020/08/24/%E8%A7%81%E8%B4%B9%E7%BC%B4%E8%B4%B9%EF%BC%8C%E4%BF%9D%E5%8D%95%E5%B7%B2%E7%BB%8F%E7%94%9F%E6%88%90%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%80%E7%9B%B4%E6%B2%A1%E6%9C%89%E5%AE%9E%E6%94%B6/</loc>
     
     <lastmod>2020-09-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.zsongzhe.site/2020/08/24/%E8%A7%81%E8%B4%B9%E7%BC%B4%E8%B4%B9%EF%BC%8C%E4%BF%9D%E5%8D%95%E5%B7%B2%E7%BB%8F%E7%94%9F%E6%88%90%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%80%E7%9B%B4%E6%B2%A1%E6%9C%89%E5%AE%9E%E6%94%B6/</loc>
+    <loc>http://blog.zsongzhe.site/2020/09/09/%E5%AF%B9%E8%B4%A6/</loc>
     
     <lastmod>2020-09-09</lastmod>
     
@@ -95,27 +95,6 @@
   </url>
   
   <url>
-    <loc>http://blog.zsongzhe.site/tags/%E5%AF%B9%E8%B4%A6/</loc>
-    <lastmod>2020-09-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.zsongzhe.site/tags/%E6%A0%B8%E9%94%80/</loc>
-    <lastmod>2020-09-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.zsongzhe.site/tags/%E6%9C%AA%E8%BE%BE/</loc>
-    <lastmod>2020-09-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.zsongzhe.site/tags/%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1%E6%8A%A5%E9%94%99/</loc>
     <lastmod>2020-09-09</lastmod>
     <changefreq>daily</changefreq>
@@ -138,6 +117,27 @@
   
   <url>
     <loc>http://blog.zsongzhe.site/tags/%E6%80%BB%E9%83%A8%E9%9B%86%E4%B8%AD%E6%94%B6%E6%AC%BE%E7%9A%84%E6%A0%87%E8%AF%86%E4%B8%BA%E7%A9%BA/</loc>
+    <lastmod>2020-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.zsongzhe.site/tags/%E5%AF%B9%E8%B4%A6/</loc>
+    <lastmod>2020-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.zsongzhe.site/tags/%E6%A0%B8%E9%94%80/</loc>
+    <lastmod>2020-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.zsongzhe.site/tags/%E6%9C%AA%E8%BE%BE/</loc>
     <lastmod>2020-09-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
