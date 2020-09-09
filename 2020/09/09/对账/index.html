@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>对账 | 赵松哲的个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="对账,核销,未达">
+    
+    <meta name="description" content="核销 目前支票、汇票、现金、刷卡四种缴费方式需要收付费系统核销 刷卡流水的核销结果进sffposmatch,非刷卡流水的核销结果进sffmatch（matchtype核销类别：1.现金 2.汇票 3、支票 4、资金划转）  刷卡核销  刷卡缴费的时候，刷卡成功完成缴付费后，刷卡信息进sffposinfo（刷卡信息），保单生成； T+1后银行提供上一日的流水清单（包括刷卡、非刷卡，银行是按照账户提">
+<meta name="keywords" content="对账,核销,未达">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对账">
+<meta property="og:url" content="http://blog.zsongzhe.site/2020/09/09/对账/index.html">
+<meta property="og:site_name" content="赵松哲的个人博客">
+<meta property="og:description" content="核销 目前支票、汇票、现金、刷卡四种缴费方式需要收付费系统核销 刷卡流水的核销结果进sffposmatch,非刷卡流水的核销结果进sffmatch（matchtype核销类别：1.现金 2.汇票 3、支票 4、资金划转）  刷卡核销  刷卡缴费的时候，刷卡成功完成缴付费后，刷卡信息进sffposinfo（刷卡信息），保单生成； T+1后银行提供上一日的流水清单（包括刷卡、非刷卡，银行是按照账户提">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909165333419.png">
+<meta property="og:updated_time" content="2020-09-09T16:08:40.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对账">
+<meta name="twitter:description" content="核销 目前支票、汇票、现金、刷卡四种缴费方式需要收付费系统核销 刷卡流水的核销结果进sffposmatch,非刷卡流水的核销结果进sffmatch（matchtype核销类别：1.现金 2.汇票 3、支票 4、资金划转）  刷卡核销  刷卡缴费的时候，刷卡成功完成缴付费后，刷卡信息进sffposinfo（刷卡信息），保单生成； T+1后银行提供上一日的流水清单（包括刷卡、非刷卡，银行是按照账户提">
+<meta name="twitter:image" content="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909165333419.png">
+    
+
+    
+        <link rel="alternate" href="/" title="赵松哲的个人博客" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">赵松哲的个人博客</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/HEXO/">HEXO</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/收付费/">收付费</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/收付费/">收付费</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-对账" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        对账
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/09/09/对账/" class="article-date">
+       <time datetime="2020-09-09T09:16:01.000Z" itemprop="datePublished">2020-09-09</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/09/09/对账/" class="article-date">
+     <time datetime="2020-09-09T16:08:40.435Z" itemprop="dateModified">2020-09-10</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/对账/">对账</a>, <a class="tag-link" href="/tags/未达/">未达</a>, <a class="tag-link" href="/tags/核销/">核销</a>
+    </div>
+
+                
+   <span id="/2020/09/09/对账/" class="leancloud-visitors" data-flag-title="对账">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">阅读次数: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="核销"><a class="markdownIt-Anchor" href="#核销"></a> 核销</h1>
+<p><strong>目前支票、汇票、现金、刷卡四种缴费方式需要收付费系统核销</strong></p>
+<p>刷卡流水的核销结果进sffposmatch,非刷卡流水的核销结果进sffmatch（matchtype核销类别：1.现金 2.汇票 3、支票 4、资金划转）</p>
+<h4 id="刷卡核销"><a class="markdownIt-Anchor" href="#刷卡核销"></a> 刷卡核销</h4>
+<ol>
+<li>刷卡缴费的时候，刷卡成功完成缴付费后，刷卡信息进sffposinfo（刷卡信息），保单生成；</li>
+<li>T+1后银行提供上一日的流水清单（包括刷卡、非刷卡，银行是按照账户提供流水清单的）；</li>
+<li>财务人员将银行提供的流水信息导入收付费系统，收付费系统将其处理后的最终结果存入sffcommbankflow（银行流水信息）表中；</li>
+<li>收付费通过【自动对账处理】 自动任务进行刷卡流水的核销（关联关系为sffposinfo.searchno=sffcommbankflow.sourcebankflowno且sffposinfo.posamount=sffcommbankflow.amount）</li>
+<li>核销成功后的sffcommbankflow中的matchflag=5（初始为0），sffposinfo的matchflag=1（初始为0）；</li>
+</ol>
+<p>Q1：刷卡流水与银行流水的对应关系（即sffposinfo怎么关联查到对应的银行流水sffcommbankflowno）</p>
+<p>​	sffposinfo.searchno=sffcommbankflow.sourcebankflowno</p>
+<ol>
+<li>一般可以用这个查到刷卡信息对应的银行流水信息，如果使用刷卡信息缴费的投保单无法生成保单的时候，可以通过这个关联关系查到对应的银行流水，使用该银行流水用于重新出单的缴费<s>或者再次缴费（删除原来投保单的缴费信息后，再重新缴费）</s></li>
+<li>另外，如果刷卡信息无法核销，则可以通过该关联关系查询，确认是否是因为银行流水信息错误或者缺失，导致刷卡信息无法核销（sffposmatch无信息）</li>
+</ol>
+<hr>
+<h4 id="其他流水的核销"><a class="markdownIt-Anchor" href="#其他流水的核销"></a> 其他流水的核销</h4>
+<p>支票（sffchequeinfo）、汇票（sffdraftinfo）、现金（sffcashinfo）因其使用不频繁，核销信息没有像刷卡流水一样单独拆出：</p>
+<ul>
+<li>sffmatch：核销汇总信息在sffmatch中，单独存核销信息，无需要核销的流水信息及银行流水信息；</li>
+<li>sffmatchdetail：核销信息与需要核销的流水的关联关系存在sffmatchdetail中，核销类别根据matchtype的值进行区分：1.现金 2.汇票 3、支票 4、资金划转；需要核销的流水通过flowno和流水信息表进行关联（sffchequeinfo.chequeflowno、sffcashinfo.cashflowno、sffdraftinfo.draftflowno），并通过核销流水号（matchno）和sffmatch关联;</li>
+<li>sffbankmatchdetail：关联核销信息及银行流水的信息存在sffbankmatchdetail中，核销流水号（matchno）与sffcommbankflow.bankflowno在此表中关联，其中sffbankmatchdetail.matchno=sffmatch.matchno且sffbankmatchdetail.bankflowno=sffcommbankflow.bankflowno。</li>
+</ul>
+<p>需要核销的流水需要人工对账核销，没有自动任务参与其中，其核销的数据流转情况如图所示：</p>
+<p><img src="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909165333419.png" alt="image-20200909165333419"></p>
+<p>当月没有核销的银行流水信息（sffcommbankflow）会存在sffunmatchdeallist表中，体现为未达账（银行已收公司未收（刷卡/非刷卡））。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://blog.zsongzhe.site/2020/09/09/对账/" data-id="ckevlwty20002sgtq8ii4gg4s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "赵松哲"
+        },
+        "headline": "对账",
+        "image": "http://blog.zsongzhe.sitehttps://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909165333419.png",
+        "keywords": "对账 核销 未达",
+        "genre": "收付费",
+        "datePublished": "2020-09-09",
+        "dateCreated": "2020-09-09",
+        "dateModified": "2020-09-10",
+        "url": "http://blog.zsongzhe.site/2020/09/09/对账/",
+        "description": " 核销
+目前支票、汇票、现金、刷卡四种缴费方式需要收付费系统核销
+刷卡流水的核销结果进sffposmatch,非刷卡流水的核销结果进sffmatch（matchtype核销类别：1.现金 2.汇票 3、支票 4、资金划转）
+ 刷卡核销
+
+刷卡缴费的时候，刷卡成功完成缴付费后，刷卡信息进sffposinfo（刷卡信息），保单生成；
+T+1后银行提供上一日的流水清单（包括刷卡、非刷卡，银行是按照账户提",
+        "wordCount": 22
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <!-- Valine -->
+    <div class="vcomments"></div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/09/10/使用gitee-hexo-picgo搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            使用gitee+hexo+picgo搭建个人博客
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/09/10/使用gitee-hexo-picgo搭建个人博客/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/HEXO/">HEXO</a></p>
+                            <p class="item-title"><a href="/2020/09/10/使用gitee-hexo-picgo搭建个人博客/" class="title">使用gitee+hexo+picgo搭建个人博客</a></p>
+                            <p class="item-date"><time datetime="2020-09-09T16:26:35.000Z" itemprop="datePublished">2020-09-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/09/09/对账/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909165333419.png)" alt="对账" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/收付费/">收付费</a></p>
+                            <p class="item-title"><a href="/2020/09/09/对账/" class="title">对账</a></p>
+                            <p class="item-date"><time datetime="2020-09-09T09:16:01.000Z" itemprop="datePublished">2020-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908175913629.png)" alt="集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/收付费/">收付费</a></p>
+                            <p class="item-title"><a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="title">集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退</a></p>
+                            <p class="item-date"><time datetime="2020-08-25T03:08:59.000Z" itemprop="datePublished">2020-08-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/08/24/见费缴费，保单已经生成，但是一直没有实收/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://gitee.com/horizen/images4mk/raw/master/image-20200824152832544.png)" alt="见费缴费，保单已经生成，但是一直没有实收" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/收付费/">收付费</a></p>
+                            <p class="item-title"><a href="/2020/08/24/见费缴费，保单已经生成，但是一直没有实收/" class="title">见费缴费，保单已经生成，但是一直没有实收</a></p>
+                            <p class="item-date"><time datetime="2020-08-24T09:05:17.000Z" itemprop="datePublished">2020-08-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/收付费/">收付费</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitee/">gitee</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/">hueman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picgo/">picgo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客/">个人博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对账/">对账</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总部集中收款的标识为空/">总部集中收款的标识为空</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无法实收/">无法实收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未达/">未达</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/核销/">核销</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动任务报错/">自动任务报错</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见费移动支付/">见费移动支付</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/退暂收款/">退暂收款</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部分转保单/">部分转保单</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/gitee/" style="font-size: 10px;">gitee</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hueman/" style="font-size: 10px;">hueman</a> <a href="/tags/picgo/" style="font-size: 10px;">picgo</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/对账/" style="font-size: 10px;">对账</a> <a href="/tags/总部集中收款的标识为空/" style="font-size: 10px;">总部集中收款的标识为空</a> <a href="/tags/无法实收/" style="font-size: 10px;">无法实收</a> <a href="/tags/未达/" style="font-size: 10px;">未达</a> <a href="/tags/核销/" style="font-size: 10px;">核销</a> <a href="/tags/自动任务报错/" style="font-size: 10px;">自动任务报错</a> <a href="/tags/见费移动支付/" style="font-size: 10px;">见费移动支付</a> <a href="/tags/退暂收款/" style="font-size: 10px;">退暂收款</a> <a href="/tags/部分转保单/" style="font-size: 10px;">部分转保单</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 赵松哲</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "false",
+            appId: "OWiKVSNFbdS1I5IRODeCmHpS-gzGzoHsz",
+            appKey: "gmW20vgvcM4hWz9AT4wqHrvt",
+            placeholder: "撰写评论",
+            avatar:"wavatar",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+</body>
+</html>

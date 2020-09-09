@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退 | 赵松哲的个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="退暂收款,部分转保单">
+    
+    <meta name="description" content="三代系统出单，部分未转保单生成的暂收款无法原路退回（扫码支付退款信息查询中无法查到退款信息），也无法通过新增退暂收款进行退暂收款操作，只能在暂收款查询中查出，如果需要原路退回，则先判断暂收款流水号在sfftempcreditinfo.useflag=1001、newsumamt=oldsumamt，然后按照以下步骤进行处理(以平顶山的一个保单举例，修正的时候需要将投保单替换为实际未转保单的投保单)">
+<meta name="keywords" content="退暂收款,部分转保单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退">
+<meta property="og:url" content="http://blog.zsongzhe.site/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/index.html">
+<meta property="og:site_name" content="赵松哲的个人博客">
+<meta property="og:description" content="三代系统出单，部分未转保单生成的暂收款无法原路退回（扫码支付退款信息查询中无法查到退款信息），也无法通过新增退暂收款进行退暂收款操作，只能在暂收款查询中查出，如果需要原路退回，则先判断暂收款流水号在sfftempcreditinfo.useflag=1001、newsumamt=oldsumamt，然后按照以下步骤进行处理(以平顶山的一个保单举例，修正的时候需要将投保单替换为实际未转保单的投保单)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908175913629.png">
+<meta property="og:updated_time" content="2020-09-09T16:08:40.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退">
+<meta name="twitter:description" content="三代系统出单，部分未转保单生成的暂收款无法原路退回（扫码支付退款信息查询中无法查到退款信息），也无法通过新增退暂收款进行退暂收款操作，只能在暂收款查询中查出，如果需要原路退回，则先判断暂收款流水号在sfftempcreditinfo.useflag=1001、newsumamt=oldsumamt，然后按照以下步骤进行处理(以平顶山的一个保单举例，修正的时候需要将投保单替换为实际未转保单的投保单)">
+<meta name="twitter:image" content="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908175913629.png">
+    
+
+    
+        <link rel="alternate" href="/" title="赵松哲的个人博客" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">赵松哲的个人博客</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/HEXO/">HEXO</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/收付费/">收付费</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/收付费/">收付费</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="article-date">
+       <time datetime="2020-08-25T03:08:59.000Z" itemprop="datePublished">2020-08-25</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="article-date">
+     <time datetime="2020-09-09T16:08:40.435Z" itemprop="dateModified">2020-09-10</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/退暂收款/">退暂收款</a>, <a class="tag-link" href="/tags/部分转保单/">部分转保单</a>
+    </div>
+
+                
+   <span id="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="leancloud-visitors" data-flag-title="集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">阅读次数: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>三代系统出单，部分未转保单生成的暂收款无法原路退回（扫码支付退款信息查询中无法查到退款信息），也无法通过新增退暂收款进行退暂收款操作，只能在暂收款查询中查出，如果需要原路退回，则先判断暂收款流水号在sfftempcreditinfo.useflag=1001、newsumamt=oldsumamt，然后按照以下步骤进行处理(以平顶山的一个保单举例，修正的时候需要将投保单替换为实际未转保单的投保单)：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--改车险系统的状态:</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> Jfcdconfirmlog <span class="keyword">set</span> operateflag=<span class="string">'8'</span>,operateTime=<span class="keyword">current</span> <span class="keyword">where</span> businessno=<span class="string">'投保单号'</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> platconfirmlog(businessno,errorMsg,operateTimeForHis,errtype) <span class="keyword">values</span>(<span class="string">'投保单号'</span>,<span class="string">''</span>,<span class="keyword">current</span>,<span class="string">'9308'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> prptopolicyLog(proposalno,policytime,inserttimeforhis,operatetimeforhis) <span class="keyword">values</span>(<span class="string">'投保单号'</span>,<span class="keyword">current</span>,<span class="keyword">current</span>,<span class="keyword">current</span>)（有数据则不需修改）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--收付费中数据修正</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--1、删除放弃转保表数据</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> sffgiveupinsurancehis <span class="keyword">where</span> documentno=<span class="string">'TDZA202041040000072220'</span>; </span><br><span class="line"><span class="comment">--2、重置自动抵扣主表的处理状态标记为初始状态（0），便于从承保（电销）系统获取及时的单证状态</span></span><br><span class="line"><span class="keyword">update</span> sffautodeductmain <span class="keyword">set</span> dealstate=<span class="string">'0'</span>,operatetimeforhis=<span class="keyword">current</span> <span class="keyword">where</span> documentno=<span class="string">'TDZA202041040000072220'</span>;</span><br></pre></td></tr></table></figure>
+<p><em><strong>非电网销出单,指收款指令流水号以JFCD和XSFF开头的 (JF和SF开头的也可以通过原路退回)</strong></em></p>
+<p>修正完成后，则等自动任务运行，目前的频率不高，需要的时间比较长，可以使用以下语句查询收付费和承保系统的交互报文：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.* <span class="keyword">from</span> sffinterfacelog a, sffsubinterfacelog b</span><br><span class="line"> <span class="keyword">where</span> a.uuid=b.uuid <span class="keyword">and</span> b.batchno=<span class="string">'未转保的投保单号'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> inserttime <span class="keyword">desc</span></span><br><span class="line">以上面的未转保单的信息举例:</span><br><span class="line"><span class="keyword">select</span> a.* <span class="keyword">from</span> sffinterfacelog a, sffsubinterfacelog b <span class="keyword">where</span> a.uuid=b.uuid <span class="keyword">and</span> b.batchno=<span class="string">'TDZA202041040000072220'</span> <span class="keyword">order</span> <span class="keyword">by</span> inserttime <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<p><img src="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908175913629.png" alt="image-20200908175913629"></p>
+<p>如果修正完成后自动任务新获取到的state还是等于3，则说明承保系统的数据修正没有走完或者修正的状态有异常，可以查该投保单在车险系统sffstateoutlog 表中的state是否=2，如果是则再重置收付费的状态（收付费系统方案的最后一句），等待重新获取承保的投保单状态；如果不是，则再次执行承保系统的修正。</p>
+<p>如果修正后自动任务新获取到的state=2，但是想查询退款状态的话，则用未转保单的投保单在收付费系统 【保费收款 &gt;&gt; 暂收款管理 &gt;&gt; 扫码支付退款查询】进行查询：</p>
+<p><img src="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908180712392.png" alt="image-20200908180712392"></p>
+<p>如果查出结果中的退款状态为：退款中，并且操作栏中存在退款查询按钮时<br>
+（如上图所示），则可以点击【退款查询】按钮进行退款查询。<br>
+最终退款成功的页面截图如下：</p>
+<p><img src="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908180747268.png" alt="image-20200908180747268"></p>
+<p>常见的承保返回收付费的状态值 及对应所代表的含义<br>
+<em>自动任务1-收付费缴费未转保单数据处理</em><br>
+<em>自动任务2-新收付费主动从见费出单系统获取缴费</em></p>
+<p><img src="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909084627801.png" alt="单证状态-车险"></p>
+<p><img src="https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909084654017.png" alt="单证状态-非车险和延保"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://blog.zsongzhe.site/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" data-id="ckevlwty80006sgtqepbtdh6p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "赵松哲"
+        },
+        "headline": "集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退",
+        "image": "http://blog.zsongzhe.sitehttps://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908175913629.png",
+        "keywords": "退暂收款 部分转保单",
+        "genre": "收付费",
+        "datePublished": "2020-08-25",
+        "dateCreated": "2020-08-25",
+        "dateModified": "2020-09-10",
+        "url": "http://blog.zsongzhe.site/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/",
+        "description": "三代系统出单，部分未转保单生成的暂收款无法原路退回（扫码支付退款信息查询中无法查到退款信息），也无法通过新增退暂收款进行退暂收款操作，只能在暂收款查询中查出，如果需要原路退回，则先判断暂收款流水号在sfftempcreditinfo.useflag=1001、newsumamt=oldsumamt，然后按照以下步骤进行处理(以平顶山的一个保单举例，修正的时候需要将投保单替换为实际未转保单的投保单)",
+        "wordCount": 161
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <!-- Valine -->
+    <div class="vcomments"></div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/09/09/对账/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            对账
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/08/24/见费缴费，保单已经生成，但是一直没有实收/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">见费缴费，保单已经生成，但是一直没有实收</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/09/10/使用gitee-hexo-picgo搭建个人博客/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/HEXO/">HEXO</a></p>
+                            <p class="item-title"><a href="/2020/09/10/使用gitee-hexo-picgo搭建个人博客/" class="title">使用gitee+hexo+picgo搭建个人博客</a></p>
+                            <p class="item-date"><time datetime="2020-09-09T16:26:35.000Z" itemprop="datePublished">2020-09-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/09/09/对账/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200909165333419.png)" alt="对账" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/收付费/">收付费</a></p>
+                            <p class="item-title"><a href="/2020/09/09/对账/" class="title">对账</a></p>
+                            <p class="item-date"><time datetime="2020-09-09T09:16:01.000Z" itemprop="datePublished">2020-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://gitee.com/horizen/images4mk/raw/master/imgs/image-20200908175913629.png)" alt="集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/收付费/">收付费</a></p>
+                            <p class="item-title"><a href="/2020/08/25/集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退/" class="title">集中收款（JZSK）扫码缴费方式完成缴费，部分转保单生成的暂收款怎么退</a></p>
+                            <p class="item-date"><time datetime="2020-08-25T03:08:59.000Z" itemprop="datePublished">2020-08-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/08/24/见费缴费，保单已经生成，但是一直没有实收/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://gitee.com/horizen/images4mk/raw/master/image-20200824152832544.png)" alt="见费缴费，保单已经生成，但是一直没有实收" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/收付费/">收付费</a></p>
+                            <p class="item-title"><a href="/2020/08/24/见费缴费，保单已经生成，但是一直没有实收/" class="title">见费缴费，保单已经生成，但是一直没有实收</a></p>
+                            <p class="item-date"><time datetime="2020-08-24T09:05:17.000Z" itemprop="datePublished">2020-08-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/收付费/">收付费</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitee/">gitee</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/">hueman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picgo/">picgo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客/">个人博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对账/">对账</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总部集中收款的标识为空/">总部集中收款的标识为空</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无法实收/">无法实收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未达/">未达</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/核销/">核销</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动任务报错/">自动任务报错</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见费移动支付/">见费移动支付</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/退暂收款/">退暂收款</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部分转保单/">部分转保单</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/gitee/" style="font-size: 10px;">gitee</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hueman/" style="font-size: 10px;">hueman</a> <a href="/tags/picgo/" style="font-size: 10px;">picgo</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/对账/" style="font-size: 10px;">对账</a> <a href="/tags/总部集中收款的标识为空/" style="font-size: 10px;">总部集中收款的标识为空</a> <a href="/tags/无法实收/" style="font-size: 10px;">无法实收</a> <a href="/tags/未达/" style="font-size: 10px;">未达</a> <a href="/tags/核销/" style="font-size: 10px;">核销</a> <a href="/tags/自动任务报错/" style="font-size: 10px;">自动任务报错</a> <a href="/tags/见费移动支付/" style="font-size: 10px;">见费移动支付</a> <a href="/tags/退暂收款/" style="font-size: 10px;">退暂收款</a> <a href="/tags/部分转保单/" style="font-size: 10px;">部分转保单</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 赵松哲</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "false",
+            appId: "OWiKVSNFbdS1I5IRODeCmHpS-gzGzoHsz",
+            appKey: "gmW20vgvcM4hWz9AT4wqHrvt",
+            placeholder: "撰写评论",
+            avatar:"wavatar",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+</body>
+</html>
